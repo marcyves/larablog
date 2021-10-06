@@ -52,7 +52,7 @@ class PostsController extends Controller
             'description' => $request->input('description'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'image_path' => $newImageName,
-            'used_id' => auth()->user()->id
+            'user_id' => auth()->user()->id
         ]);
 
         return redirect('/blog')->with('message', 'Your post has been added!');
